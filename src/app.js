@@ -64,15 +64,15 @@ class App extends React.Component {
     return arr;
   };
   render() {
-    let reactCard = this.state.boxing.map(card => {
+    let reactCard = this.state.boxing.map(card => (
       <Card
         name={card.name}
         image={card.image}
         key={card.id}
         id={card.id}
         onClick={this.cardClick}
-      />;
-    });
+      />
+    ));
 
     let mixCard = this.mixCards(reactCard);
 
