@@ -1,0 +1,10 @@
+.wrapper {
+  background: cornflowerblue;
+  height: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  padding: 20px 10px;
+  justify-content: space-around;
+  align-content: center;
+  overflow: auto;
+}
