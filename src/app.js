@@ -70,7 +70,7 @@ class App extends React.Component {
         image={card.image}
         key={card.id}
         id={card.id}
-        onClick={this.cardClick}
+        cardClick={this.cardClick}
       />
     ));
 
