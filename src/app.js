@@ -7,6 +7,18 @@ import boxing from "./boxing.json";
 import update from "immutability-helper";
 import "./App.css";
 
+const reactCard = (cardArr, clickHandler) => {
+  return cardArr.map(card => (
+    <Card
+      name={card.name}
+      image={card.image}
+      key={card.id}
+      id={card.id}
+      cardClick={clickHandler}
+    />
+  ));
+};
+
 class App extends React.Component {
   state = {
     topScore: 0,
@@ -15,7 +27,7 @@ class App extends React.Component {
     boxing
   };
 
-  cardCick = cardId => {
+  cardClick = cardId => {
     console.log(cardId);
     let cardArr = this.state.boxing;
 
@@ -63,18 +75,9 @@ class App extends React.Component {
     }
     return arr;
   };
-  render() {
-    let reactCard = this.state.boxing.map(card => (
-      <Card
-        name={card.name}
-        image={card.image}
-        key={card.id}
-        id={card.id}
-        cardClick={this.cardClick}
-      />
-    ));
 
-    let mixCard = this.mixCards(reactCard);
+  render() {
+    let mixCard = reactCard(this.mixCards(boxing), this.cardClick);
 
     return (
       <div>
